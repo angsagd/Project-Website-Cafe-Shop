@@ -8,20 +8,38 @@
     <title>Rasa Kopi</title>
     <meta name="title" content="Rasa Kopi">
     <meta name="description" content="Cafe Shop di Bali">
+
+    <!-- FAVICON -->
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
     <!-- HEADER -->
     <header class="header" data-header>
         <div class="container">
-            <a href="#" class="logo">
-                <img src="" width="" height="" alt="Rasa Kopi - Home">
+            <a href="" class="logo">
+                <img src="Media/LogoHeader1.png" width="240" alt="Rasa Kopi - Home">
             </a>
 
             <nav class="navbar" data-navbar>
+
+                <button class="close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <a href="#top" class="logo">
+                    <img src="Media/LogoHeader1.png" width="160" height="50" alt="Rasa Kopi">
+                </a>
 
                 <ul class="navbar-list">
 
@@ -57,7 +75,40 @@
 
                 </ul>
 
+                <div class="text-center">
+                    <p class="headline-1 navbar-title">Kunjungi</p>
+
+                    <address class="body-4">
+                        Sabe|Coffee Shopp,<br> Saba Blahbatuh Gianyar, Bali, ID
+                    </address>
+
+                    <p class="body-4 navbar-text">Buka : 10.00 am - 11.59 pm</p>
+
+                    <a href="mailto:sabecoffee@gmail.com" class="body-4 sidebar-link">sabecoffee@gmail.com</a>
+
+                    <div class="separator"></div>
+
+                    <p class="contact-label">Pesan Meja</p>
+
+                    <a href="tel:+628123456789" class="body-1 contact-number hover-underline">+62 812 345 6789</a>
+                </div>
+
             </nav>
+
+            <a href="#reservation" class="btn btn-secondary">
+                <span class="text text-1">Pilih Meja</span>
+                
+                <span class="text text-2" aria-hidden="true">Pilih Meja</span>
+            </a>
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+
         </div>
     </header>
 
@@ -70,7 +121,7 @@
 
                 <li class="slider-item active" data-hero-slider-item>
                     <div class="slider-bg">
-                        <img src="" width="1880" height="950" class="img-cover">
+                        <img src="Media/hero-slider-1.jpg" width="1880" height="950" class="img-cover">
                     </div>
 
                     <h1 class="display-1 hero-title slider-reveal">
@@ -80,7 +131,7 @@
 
                 <li class="slider-item active" data-hero-slider-item>
                     <div class="slider-bg">
-                        <img src="" width="1880" height="950" class="img-cover">
+                        <img src="Media/hero-slider-1.jpg" width="1880" height="950" class="img-cover">
                     </div>
 
                     <h1 class="display-1 hero-title slider-reveal">
@@ -90,7 +141,7 @@
 
                 <li class="slider-item active" data-hero-slider-item>
                     <div class="slider-bg">
-                        <img src="" width="1880" height="950" class="img-cover">
+                        <img src="Media/hero-slider-1.jpg" width="1880" height="950" class="img-cover">
                     </div>
 
                     <h1 class="display-1 hero-title slider-reveal">
