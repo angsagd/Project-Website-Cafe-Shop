@@ -565,7 +565,6 @@ textarea.input-field {
 
 /* Desktop */
 @media (max-width : 1366px) {
-
 }
 
 /* Tablet */
@@ -585,8 +584,8 @@ textarea.input-field {
 
 /* Mobile */
 @media (max-width : 450px) {
-
 }
+
 
 
 /* MENU */
