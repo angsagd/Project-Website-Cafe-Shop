@@ -143,7 +143,7 @@ body{
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
   /* overflow: hidden; */
-  height: 300vh;
+  /* height: 300vh; */
 }
 
 body.loaded {
@@ -222,6 +222,7 @@ body.nav-active {
 .label-2 { font-size: var(--fontSize-label-2); }
 
 
+
 /*  REUSED STYLE */
 
 .container { padding-inline: 16px; }
@@ -235,8 +236,6 @@ body.nav-active {
 }
 
 .text-center { text-align: center; }
-
-/* REUSE STYLE */
 
 .input-field {
   background-color: var(--eerie-black-2);
@@ -340,7 +339,10 @@ left: 15px; }
 
 .bg-black-10 { background-color: var(--smoky-black-2);}
 
+
+
 /* RESERVATION */
+
 .reservation-form { margin-block-start: 130px;}
 
 .form-text { margin-block-end: 40px; }
@@ -390,6 +392,24 @@ textarea.input-field {
   background-position: top left;
 }
 
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.grid-list {
+  display: grid;
+  gap: 40px;
+}
+
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  overflow: hidden;
+  background-color: var(--eerie-black-4);
+}
 
 
 
@@ -536,98 +556,6 @@ textarea.input-field {
   pointer-events: all;
 }
 
-/* Contact 
-.contact {
-  padding: 8rem 7% 1.4rem;
-}
-
-.contact h2 {
-  text-align: center;
-  font-size: 2.6rem;
-  margin-bottom: 3rem;
-}
-
-.contact h2 span {
-  color: var(--gold-crayola);
-}
-
-.contact p {
-  margin-bottom: 1rem;
-  text-align: center;
-  max-width: 30rem;
-  margin: auto;
-}
-
-.contact .row {
-  display: flex;
-  margin-top: 2rem;
-  background-color: var(--smoky-black-1);
-}
-
-.contact .row .map {
-  flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
-  height: 40rem;
-}
-
-.contact .row form {
-  flex: 1 1 45rem;
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.contact .row form .input-group {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-  background-color: var(--eerie-black-1);
-  border: 1px solid var(--white-alpha-20);
-  padding-left: 2rem;
-}
-
-.contact .row form .input-group input {
-  width: 100%;
-  padding: 2rem;
-  font-size: 1.7rem;
-  background: none;
-  color: var(--white);
-}
-
-.contact .row form .btn-contact {
-  margin-top: 3rem;
-  display: inline-block;
-  padding: 1rem 3rem;
-  font-size: 1.7rem;
-  color: var(--white);
-  background-color: var(--gold-crayola);
-  cursor: pointer;
-}
-
-.contact .social-media {
-  text-align: center;
-}
-
-.contact .social-media a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--white);
-  transition: transform 0.3s ease-in-out;
-}
-
-.contact .social-media a:hover {
-  transform: scale(1.1);
-  color: var(--gold-crayola);
-}
-
-.contact .social-icons {
-  display: flex;
-  justify-content: center;
-}
-
-*/
-
 .map {
   flex: 1 1 45rem;
   width: 100%;
@@ -658,4 +586,61 @@ textarea.input-field {
 /* Mobile */
 @media (max-width : 450px) {
 
+}
+
+
+/* MENU */
+
+.menu .section-title { margin-block-end: 40px; }
+
+.menu .grid-list{  margin-block-end: 50px; }
+
+.menu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hover\:card .card-banner { background-color: var(--gold-crayola); }
+
+.hover\:card .card-banner .img-cover { transition: var(--transition-2); }
+
+.hover\:card:is(:hover, :focus-within) .card-banner .img-cover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.menu-card .card-banner {
+  flex-shrink: 0;
+  border-radius: var(--radius-24);
+}
+
+.menu-card .card-title { transition: var(--transition-1); }
+
+.menu-card .card-title:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+
+.menu-card .badge {
+  background-color: var(--gold-crayola);
+  color: var(--eerie-black-1);
+  font-family: var(--fontFamily-forum);
+  max-width: max-content;
+  line-height: var(--lineHeight-6);
+  text-transform: uppercase;
+  padding-inline: 10px;
+  margin-block-start: 10px;
+}
+
+.menu-card .span {
+  color: var(--gold-crayola);
+  margin-block: 10px;
+}
+
+.menu-card .card-text {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-4);
+}
+
+.menu-text .span {
+  display: inline-block;
+  color: var(--gold-crayola);
 }
