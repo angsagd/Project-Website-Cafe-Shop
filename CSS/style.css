@@ -341,78 +341,6 @@ left: 15px; }
 
 
 
-/* RESERVATION */
-
-.reservation-form { margin-block-start: 130px;}
-
-.form-text { margin-block-end: 40px; }
-
-.form-text .link {
-  display: inline;
-  color: var(--gold-crayola);
-}
-
-.form-right .headline-1 { margin-block-end: 40px; }
-
-.form-right .contact-label { margin-block-end: 5px; }
-
-.form-right .separator { margin: 20px auto; }
-
-.form-right .body-4 {
-  color: var(--quick-silver);
-  line-height: var(--lineHeight-3);
-}
-
-.form-right .body-4:not(:last-child) { margin-block-end: 25px; }
-
-.form-left,
-.form-right { padding: 40px 20px 30px; }
-
-.input-field[type="date"] {
-  text-transform: uppercase;
-  padding-inline-end: 10px;
-}
-
-.input-field[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; }
-
-textarea.input-field {
-  resize: none;
-  height: 140px;
-  padding-block: 40px;
-  line-height: var(--lineHeight-1);
-}
-
-.form-left .btn {
-  max-width: 100%;
-  width: 100%;
-}
-
-.form-right {
-  background-repeat: repeat;
-  background-position: top left;
-}
-
-.section {
-  position: relative;
-  padding-block: var(--section-space);
-  overflow: hidden;
-  z-index: 1;
-}
-
-
-.grid-list {
-  display: grid;
-  gap: 40px;
-}
-
-.img-holder {
-  aspect-ratio: var(--width) / var(--height);
-  overflow: hidden;
-  background-color: var(--eerie-black-4);
-}
-
-
-
 /* HEADER */
 
 .header {
@@ -556,43 +484,18 @@ textarea.input-field {
   pointer-events: all;
 }
 
-.map {
-  flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
-  height: 40rem;
-}
-
-/* Desktop */
-@media (max-width : 1366px) {
-}
-
-/* Tablet */
-@media (max-width : 758px) {
-  .contact .row {
-    flex-wrap: wrap;
-  }
-
-  .contact .row .map {
-    height: 30rem;
-  }
-
-  .contact .row form {
-    padding-top: 0;
-  }
-}
-
-/* Mobile */
-@media (max-width : 450px) {
-}
-
 
 
 /* MENU */
 
+.menu .container { margin-top: -10px; }
+
 .menu .section-title { margin-block-end: 40px; }
 
-.menu .grid-list{  margin-block-end: 50px; }
+.menu .grid-list{
+  padding-top: 15px;
+  margin-block-end: 50px;
+}
 
 .menu-card {
   display: flex;
@@ -643,3 +546,123 @@ textarea.input-field {
   display: inline-block;
   color: var(--gold-crayola);
 }
+
+
+
+/* RESERVATION */
+
+.reservation-form { margin-block-start: 130px;}
+
+.form-text { margin-block-end: 40px; }
+
+.form-text .link {
+  display: inline;
+  color: var(--gold-crayola);
+}
+
+.form-right .headline-1 { margin-block-end: 40px; }
+
+.form-right .contact-label { margin-block-end: 5px; }
+
+.form-right .separator { margin: 20px auto; }
+
+.form-right .body-4 {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-3);
+}
+
+.form-right .body-4:not(:last-child) { margin-block-end: 25px; }
+
+.form-left,
+.form-right { padding: 40px 20px 30px; }
+
+.input-field[type="date"] {
+  text-transform: uppercase;
+  padding-inline-end: 10px;
+}
+
+.input-field[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; }
+
+textarea.input-field {
+  resize: none;
+  height: 140px;
+  padding-block: 40px;
+  line-height: var(--lineHeight-1);
+}
+
+.form-left .btn {
+  max-width: 100%;
+  width: 100%;
+}
+
+.form-right {
+  background-repeat: repeat;
+  background-position: top left;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.grid-list {
+  display: grid;
+  gap: 40px;
+}
+
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  overflow: hidden;
+  background-color: var(--eerie-black-4);
+}
+
+
+.map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+  height: 40rem;
+}
+
+
+
+
+/* FOOTER */
+
+.footer {
+    display: block;
+    position: block;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    padding-block: 10px;
+    border-block-end: 1px solid var(--white-alpha-20);
+    z-index: 4;
+    transition: var(--transition-1);
+  }
+
+  .footer:has(~ .header.active) {transform: translateY(-100%); }
+
+  .footer .container,
+  .footer-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer .container {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .footer-item { gap: 1px; }
+
+  .footer-item ion-icon { --ionicon-stroke-width: 60px; }
+
+  .footer-item .span { font-size: var(--fontSize-label-1); }
+
+  .footer .link { transition: var(--transition-1); }
+
+  .footer .link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
