@@ -55,36 +55,55 @@ window.addEventListener("scroll", function () {
 
 // FILTERASI MENU
 
+// const filterButton = document.querySelectorAll(".filter-button button");
+// const filterableCards = document.querySelectorAll(".filterable-cards .card");
 
-// const filterButtons = document.querySelectorAll('.filter-button .section-filter');
-// const cardItems = document.querySelectorAll('.filterable-cards li');
+// const filterCards = e => {
+//     document.querySelector(".filter-button .active")?.classList.remove("active");
+//     e.target.classList.add("active");
 
-// filterButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     document.querySelector('.filter-button .active')?.classList.remove('active');
-//     button.classList.add('active');
+//     filterableCards.forEach(card => {
+//         card.classList.add("hide");
 
-//     const filterValue = button.dataset.filter;
+//         if (card.dataset.name === e.target.dataset.name || e.target.dataset.name === "all" ) {
+//             card.classList.remove("hide");
+//         }
+//     });
+// };
 
-//     cardItems.forEach(item => {
-//       const card = item.querySelector('.card');
-//       if (!card) return;
+// filterButton.forEach(button => button.addEventListener("click", filterCards));
 
-//       if (filterValue === 'Semua' || card.classList.contains(filterValue)) {
-//         item.classList.remove('hide');
-//       } else {
-//         item.classList.add('hide');
-//       }
+//   const filterButtons = document.querySelectorAll('.filter-button .section-filter');
+//   const cards = document.querySelectorAll('.filterable-cards .card');
+
+//   filterButtons.forEach(button => {
+//     button.addEventListener('click', () => {
+//       // Ganti tombol aktif
+//       document.querySelector('.filter-button .active')?.classList.remove('active');
+//       button.classList.add('active');
+
+//       const filterValue = button.dataset.filter;
+
+//       cards.forEach(card => {
+//         if (filterValue === 'Semua') {
+//           card.classList.remove('hide');
+//         } else {
+//           if (card.classList.contains(filterValue)) {
+//             card.classList.remove('hide');
+//           } else {
+//             card.classList.add('hide');
+//           }
+//         }
+//       });
 //     });
 //   });
-// });
+
 
 const filterButtons = document.querySelectorAll('.filter-button .section-filter');
 const cardItems = document.querySelectorAll('.filterable-cards li');
 
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
-    // Aktifkan tombol
     document.querySelector('.filter-button .active')?.classList.remove('active');
     button.classList.add('active');
 
@@ -94,15 +113,12 @@ filterButtons.forEach(button => {
       const card = item.querySelector('.card');
       if (!card) return;
 
-      // Jika filter "Semua" atau class pada card cocok
-        if (filterValue === 'Semua') {
+      if (filterValue === 'Semua' || card.classList.contains(filterValue)) {
         item.classList.remove('hide');
-        } else if (card.classList.contains(filterValue)) {
-        item.classList.remove('hide');
-        } else {
+      } else {
         item.classList.add('hide');
-        }
-
+      }
     });
   });
 });
+
