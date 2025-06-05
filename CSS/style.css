@@ -280,6 +280,15 @@ left: 15px; }
   right: 10px;
 }
 
+.section-subtitle {
+  position:relative;
+  color: var(--gold-crayola);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing-2);
+  margin-block-end: 12px;
+}
+
 .btn {
   position: relative;
   color: var(--gold-crayola);
@@ -339,66 +348,17 @@ left: 15px; }
 
 .bg-black-10 { background-color: var(--smoky-black-2);}
 
-
-
-/* RESERVATION */
-
-.reservation-form { margin-block-start: 130px;}
-
-.form-text { margin-block-end: 40px; }
-
-.form-text .link {
-  display: inline;
+.btn-text {
   color: var(--gold-crayola);
-}
-
-.form-right .headline-1 { margin-block-end: 40px; }
-
-.form-right .contact-label { margin-block-end: 5px; }
-
-.form-right .separator { margin: 20px auto; }
-
-.form-right .body-4 {
-  color: var(--quick-silver);
-  line-height: var(--lineHeight-3);
-}
-
-.form-right .body-4:not(:last-child) { margin-block-end: 25px; }
-
-.form-left,
-.form-right { padding: 40px 20px 30px; }
-
-.input-field[type="date"] {
+  padding-block-end: 4px;
+  margin-inline: auto;
   text-transform: uppercase;
-  padding-inline-end: 10px;
+  letter-spacing: var(--letterSpacing-3);
+  font-weight: var(--weight-bold);
+  transition: var(--transition-1);
 }
 
-.input-field[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; }
-
-textarea.input-field {
-  resize: none;
-  height: 140px;
-  padding-block: 40px;
-  line-height: var(--lineHeight-1);
-}
-
-.form-left .btn {
-  max-width: 100%;
-  width: 100%;
-}
-
-.form-right {
-  background-repeat: repeat;
-  background-position: top left;
-}
-
-.section {
-  position: relative;
-  padding-block: var(--section-space);
-  overflow: hidden;
-  z-index: 1;
-}
-
+.btn-text:is(:hover, :focus-visible) { color: var(--white); }
 
 .grid-list {
   display: grid;
@@ -410,7 +370,6 @@ textarea.input-field {
   overflow: hidden;
   background-color: var(--eerie-black-4);
 }
-
 
 
 /* HEADER */
@@ -556,43 +515,18 @@ textarea.input-field {
   pointer-events: all;
 }
 
-.map {
-  flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
-  height: 40rem;
-}
-
-/* Desktop */
-@media (max-width : 1366px) {
-}
-
-/* Tablet */
-@media (max-width : 758px) {
-  .contact .row {
-    flex-wrap: wrap;
-  }
-
-  .contact .row .map {
-    height: 30rem;
-  }
-
-  .contact .row form {
-    padding-top: 0;
-  }
-}
-
-/* Mobile */
-@media (max-width : 450px) {
-}
-
 
 
 /* MENU */
 
+.menu .container { margin-top: -10px; }
+
 .menu .section-title { margin-block-end: 40px; }
 
-.menu .grid-list{  margin-block-end: 50px; }
+.menu .grid-list{
+  padding-top: 15px;
+  margin-block-end: 50px;
+}
 
 .menu-card {
   display: flex;
@@ -605,9 +539,13 @@ textarea.input-field {
 .hover\:card .card-banner .img-cover { transition: var(--transition-2); }
 
 .hover\:card:is(:hover, :focus-within) .card-banner .img-cover {
-  opacity: 0.7;
-  transform: scale(1.05);
+  transform: scale(1.2);
+  transition: var(--transition-3)
 }
+
+.menu-card .title-wrapper {
+    width: 160px;
+  }
 
 .menu-card .card-banner {
   flex-shrink: 0;
@@ -635,6 +573,7 @@ textarea.input-field {
 }
 
 .menu-card .card-text {
+  display: none;
   color: var(--quick-silver);
   line-height: var(--lineHeight-4);
 }
@@ -643,6 +582,7 @@ textarea.input-field {
   display: inline-block;
   color: var(--gold-crayola);
 }
+
 
 /*GALERI*/
 .section {
@@ -740,3 +680,107 @@ textarea.input-field {
 #radio4:checked ~ .nav-auto .a-b1{
   background-color: #23e3c2;
 }
+
+
+/* RESERVATION */
+
+.reservation-form { margin-block-start: 130px;}
+
+.form-text { margin-block-end: 40px; }
+
+.form-text .link {
+  display: inline;
+  color: var(--gold-crayola);
+}
+
+.form-right .headline-1 { margin-block-end: 40px; }
+
+.form-right .contact-label { margin-block-end: 5px; }
+
+.form-right .body-4 {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-3);
+}
+
+.form-right .body-4:not(:last-child) { margin-block-end: 25px; }
+
+.form-left,
+.form-right { padding: 40px 20px 30px; }
+
+.input-field[type="date"] {
+  text-transform: uppercase;
+  padding-inline-end: 10px;
+}
+
+.input-field[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; }
+
+textarea.input-field {
+  resize: none;
+  height: 140px;
+  padding-block: 40px;
+  line-height: var(--lineHeight-1);
+}
+
+.form-left .btn {
+  max-width: 100%;
+  width: 100%;
+}
+
+.form-right {
+  background-repeat: repeat;
+  background-position: top left;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+  height: 40rem;
+}
+
+
+
+
+/* FOOTER */
+
+.footer {
+    display: block;
+    position: block;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    padding-block: 10px;
+    border-block-end: 1px solid var(--white-alpha-20);
+    z-index: 4;
+    transition: var(--transition-1);
+  }
+
+  .footer:has(~ .header.active) {transform: translateY(-100%); }
+
+  .footer .container,
+  .footer-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer .container {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .footer-item { gap: 1px; }
+
+  .footer-item ion-icon { --ionicon-stroke-width: 60px; }
+
+  .footer-item .span { font-size: var(--fontSize-label-1); }
+
+  .footer .link { transition: var(--transition-1); }
+
+  .footer .link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
