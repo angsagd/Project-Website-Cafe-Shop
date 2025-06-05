@@ -519,14 +519,36 @@ left: 15px; }
 
 /* MENU */
 
+.menu button { margin-block: 1px; }
+
+.section-filter {
+  position:relative;
+  color: var(--gold-crayola);
+  letter-spacing: var(--letterSpacing-1);
+  margin-block-end: 12px;
+  font-size: 14px;
+}
+
+.section-filter.active { color: var(--white); }
+
+/* .card.hide { display: none; } */
+.filterable-cards li.hide {
+  display: none;
+}
+
+
 .menu .container { margin-top: -10px; }
 
 .menu .section-title { margin-block-end: 40px; }
 
-.menu .grid-list{
+.menu .grid-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   padding-top: 15px;
   margin-block-end: 50px;
 }
+
 
 .menu-card {
   display: flex;
