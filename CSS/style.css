@@ -537,6 +537,18 @@ left: 15px; }
 
 
 /* MENU */
+.menu .card-wrapper2 .swiper-slide-button2 {
+  color: var(--gold-crayola);
+  margin-top: -900px;
+}
+
+.card-list .card-link .card-image2 {
+  width: 100%;
+  aspect-ratio: 350/450;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
 
 .menu button { margin-block: 1px; }
 
@@ -625,6 +637,8 @@ left: 15px; }
 }
 
 
+
+
 /* GALERI */
 
 .galeri .container { margin-top: -10px; }
@@ -632,8 +646,8 @@ left: 15px; }
 .card-wrapper {
    padding-block: 50px; 
    margin: 0 60px 35px;
-   padding: 20px 10px;
    overflow: hidden;
+   padding: 20px 10px;
   }
 
 

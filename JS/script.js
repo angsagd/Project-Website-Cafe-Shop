@@ -55,30 +55,6 @@ window.addEventListener("scroll", function () {
 
 // FILTERASI MENU
 
-
-// const filterButtons = document.querySelectorAll('.filter-button .section-filter');
-// const cardItems = document.querySelectorAll('.filterable-cards li');
-
-// filterButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     document.querySelector('.filter-button .active')?.classList.remove('active');
-//     button.classList.add('active');
-
-//     const filterValue = button.dataset.filter;
-
-//     cardItems.forEach(item => {
-//       const card = item.querySelector('.card');
-//       if (!card) return;
-
-//       if (filterValue === 'Semua' || card.classList.contains(filterValue)) {
-//         item.classList.remove('hide');
-//       } else {
-//         item.classList.add('hide');
-//       }
-//     });
-//   });
-// });
-
 const filterButtons = document.querySelectorAll('.filter-button .section-filter');
 const cardItems = document.querySelectorAll('.filterable-cards li');
 
@@ -109,6 +85,38 @@ filterButtons.forEach(button => {
 
 
     // GALERI PUNYA
+   new Swiper('.card-wrapper2', {
+  loop: true,
+    spaceBetween: 30,
+
+  // Pagination bullets
+  pagination: {
+    el: '.swiper-pagination2',
+    clickable: true,
+    dynamicBullets: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+   // Responsive brakpoints
+  breakpoints:{
+    0: {
+        slidesPerView: 1
+    },
+     768: {
+        slidesPerView: 2
+    },
+    1024: {
+        slidesPerView: 3
+    },
+  }
+});
+
+
 new Swiper('.card-wrapper', {
   loop: true,
     spaceBetween: 30,
@@ -139,3 +147,4 @@ new Swiper('.card-wrapper', {
     },
   }
 });
+
