@@ -629,10 +629,17 @@ left: 15px; }
 
 .galeri .container { margin-top: -10px; }
 
-.card-wripper { padding-block: 50px; }
+.card-wrapper {
+   padding-block: 50px; 
+   margin: 0 60px 35px;
+   padding: 20px 10px;
+   overflow: hidden;
+  }
+
+
 
 .card-list .card-item .card-link {
-  width: 100%;
+  user-select: none;
   display: block;
   background: var(--smoky-black-3);
   padding: 18px;
@@ -642,6 +649,11 @@ left: 15px; }
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   transition: 0.2s ease;
 }
+
+.card-list .card-item .card-link:active{
+  cursor: grabbing;
+}
+
 .card-list .card-item .card-link:hover{
   border-color: var(--gold-crayola);
 }
@@ -728,6 +740,30 @@ left: 15px; }
   background: var(--gold-crayola);
 }
 
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background:var(--gold-crayola) ;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button {
+  color: var(--gold-crayola);
+  margin-top: -35px;
+}
+
+@media screen and (max-width: 768px){
+  .card-wraper{
+    margin: 0 10px 25px;
+  }
+  .card-wrapper .swiper-slide-button{
+    display: none;
+  }
+}
 
 
 /* PROMO & EVENT */
