@@ -280,6 +280,13 @@ left: 15px; }
   right: 10px;
 }
 
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+  overflow: hidden;
+  z-index: 1;
+}
+
 .section-subtitle {
   position:relative;
   color: var(--gold-crayola);
@@ -306,9 +313,9 @@ left: 15px; }
 .btn::before {
   content: "";
   position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 200%;
   height: 200%;
   border-radius: var(--radius-circle);
@@ -317,25 +324,37 @@ left: 15px; }
   z-index: -1;
 }
 
-.btn .text { transition: var(--transition-1); }
+.btn .text {
+  transition: var(--transition-1);
+  position: relative;
+  display: inline-block;
+}
 
 .btn .text-2 {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
   min-width: max-content;
   color: var(--smoky-black-1);
+  transition: var(--transition-1);
 }
 
-.btn:is(:hover, :focus-visible)::before { bottom: -50%; }
-
-.btn:is(:hover, :focus-visible) .text-1 { transform: translateY(-40px); }
-
-.btn:is(:hover, :focus-visible) .text-2 { 
-  top: 50%;
-  transform: translate(-50%, -50%); 
+.btn:is(:hover, :focus-visible)::before {
+  left: -50%;
 }
+
+.btn:is(:hover, :focus-visible) .text-1 {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.btn:is(:hover, :focus-visible) .text-2 {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
 
 .btn-secondary {
   background-color: var(--gold-crayola);
@@ -430,7 +449,7 @@ left: 15px; }
   padding-block-end: 50px;
   overflow-y: auto;
   visibility: hidden;
-  z-index: 2;
+  z-index: 10;
   transition: var(--transition-2);
 }
 
@@ -606,16 +625,16 @@ left: 15px; }
 }
 
 
-/*GALERI*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* GALERI */
+
+.galeri .container { margin-top: -10px; }
+
+.card-wripper { padding-block: 50px; }
+
 .card-list .card-item .card-link {
-  width: 400px;
+  width: 100%;
   display: block;
-  background: #fff;
+  background: var(--smoky-black-3);
   padding: 18px;
   border-radius: 12px;
   text-decoration: none;
@@ -624,27 +643,23 @@ left: 15px; }
   transition: 0.2s ease;
 }
 .card-list .card-item .card-link:hover{
-  border-color: #5372F0;
-}
-
-.card-list .card-link{
-  list-style: none;
+  border-color: var(--gold-crayola);
 }
 
 .card-list .card-link .card-image {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 1125/2000;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 .card-list .card-link .badge {
-  color: #5372F0;
+  color: var(--gold-crayola);
   padding: 8px 16px;
   font-size: 0.95rem;
   font-weight: 500;
   margin: 16px 0 18px;
-  background: #DDE4FF;
+  background: var(--davys-grey);
   width: fit-content;
   border-radius: 50px;
 }
@@ -658,23 +673,124 @@ left: 15px; }
 .card-list .card-link .card-button{
   height: 35px;
   width: 35px;
-  color: #5372F0;
+  color: var(--gold-crayola);
   border-radius: 50%;
   margin: 30px 0 5px;
   background: none;
   cursor: pointer;
-  border: 2px solid #5372F0;
+  border: 2px solid var(--quick-silver);
   transform: rotate(-45deg);
   transition:0.4s ease;
 }
 .card-list .card-link:hover .card-button{
-  color: #fff;
-  background: #5372F0;
+  color: var(--black);
+  background: var(--gold-crayola);
 }
 
-/* RESERVATION */
 
-.reservation-form { margin-block-start: 130px;}
+
+/* PROMO & EVENT */
+
+.promo > :first-child { margin-top: 60px; }
+
+.promo-content { padding-block: 70px; }
+
+.promo-banner {
+  width: 100%;
+  overflow: hidden; 
+}
+
+.promo-1 { padding-top: 50px; }
+
+.promo-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+
+.promo .abs-img {
+  margin-inline: auto;
+  margin-block-end: 12px;
+}
+
+.promo .section-text { margin-block: 16px 40px; }
+
+.promo-content .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-block-end:40px;
+}
+
+.promo-content .del { color: var(--davys-grey); }
+
+.promo-content .span { color: var(--gold-crayola); }
+
+.promo .btn { margin-inline: auto; }
+
+/* event */
+
+.event .section-title { margin-block-end: 40px; }
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.event .img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-card .card-content {
+  background-image: var(--gradient-1);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 35px 35px 25px;
+}
+
+.event-card .publish-date {
+  position: absolute;
+  top: 30px;
+  left: 25px;
+  padding: 5px 10px;
+  color: var(--gold-crayola);
+  background-color: var(--black);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--letterSpacing-1);
+  line-height: 14px;
+}
+
+.event-card .card-subtitle {
+  color: var(--gold-crayola);
+  text-transform: uppercase;
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--letterSpacing-1);
+  margin-block-end: 5px;
+}
+
+.event-card .card-banner .img-cover { transition: var(--transition-2); }
+
+.event-card:is(:hover, :focus-within) .img-cover { transform: scale(1.05); }
+
+.event .btn {
+  margin-inline: auto;
+  margin-block-start: 40px;
+}
+
+
+
+
+
+/* LOKASI & RESERVATION */
+
+.lokasi .container { margin-top: -10px; }
 
 .form-text { margin-block-end: 40px; }
 
@@ -721,19 +837,46 @@ textarea.input-field {
   background-position: top left;
 }
 
-.section {
-  position: relative;
-  padding-block: var(--section-space);
-  overflow: hidden;
-  z-index: 1;
-}
-
 .map {
+  margin-top: 90px;
   flex: 1 1 45rem;
   width: 100%;
   object-fit: cover;
   height: 40rem;
+  z-index: -1;
 }
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 232vh;
+}
+
+.map {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: 0;
+}
+
+.form-overlay {
+  position: absolute;
+  top: 1200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 30px 20px;
+  background-color: var(--black);
+  color: white;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 10px;
+}
+
 
 
 
@@ -742,7 +885,7 @@ textarea.input-field {
 
 .footer {
     display: block;
-    position: block;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%; 
