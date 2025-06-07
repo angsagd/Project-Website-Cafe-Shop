@@ -147,4 +147,3 @@ new Swiper('.card-wrapper', {
     },
   }
 });
-
