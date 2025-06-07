@@ -207,9 +207,17 @@
           <p class="section-subtitle text-center label-2">Daftar</p>
 
           <ul class="grid-list filterable-cards">
+            <div id="menuPopup" class="popup-modal hidden">
+              <div class="popup-content">
+                <span class="close-btn" id="closePopup">&times;</span>
+                <img id="popupImage" src="" alt="Menu Image" class="popup-img">
+                <h3 id="popupTitle" class="popup-title"></h3>
+                <p id="popupDesc" class="popup-desc"></p>
+              </div>
+            </div>
 
             <li>
-              <div class="menu-card hover:card card Makanan" data-name="Makanan">
+              <div class="menu-card hover:card card Makanan" data-name="Makanan" >
 
                 <figure class="card-banner img-holder" style="--width: 69; --height: 69;">
                   <img src="/Media/iconMenu1.jpg" width="69" height="69" loading="lazy" alt="Bacon Egg Benedict" class="img-cover">
