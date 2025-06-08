@@ -636,6 +636,15 @@ left: 15px; }
   color: var(--gold-crayola);
 }
 
+@media screen and (max-width: 768px){
+  .card-wrapper2{
+    margin: 0 10px 25px;
+  }
+  .card-wrapper2 .swiper-slide-button2{
+    display: none;
+  }
+}
+
 
 
 
