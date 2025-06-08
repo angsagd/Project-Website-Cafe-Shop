@@ -803,7 +803,14 @@ left: 15px; }
   block-size: 300px;
 }
 
-
+@media screen and (max-width: 768px){
+  .card-wraper2{
+    margin: 0 10px 25px;
+  }
+  .card-wrapper2 .swiper-slide-button2{
+    display: none;
+  }
+}
 
 
 

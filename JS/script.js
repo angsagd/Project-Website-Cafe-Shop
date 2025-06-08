@@ -143,7 +143,7 @@ filterButtons.forEach(button => {
 });
 
 
-    // GALERI PUNYA
+    // MENU PUNYA
    new Swiper('.card-wrapper2', {
   loop: true,
     spaceBetween: 30,
@@ -176,6 +176,8 @@ filterButtons.forEach(button => {
 });
 
 
+
+ // GALERI 
 new Swiper('.card-wrapper', {
   loop: true,
     spaceBetween: 30,
