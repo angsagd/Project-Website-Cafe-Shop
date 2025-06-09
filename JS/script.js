@@ -55,30 +55,6 @@ window.addEventListener("scroll", function () {
 
 // FILTERASI MENU
 
-
-// const filterButtons = document.querySelectorAll('.filter-button .section-filter');
-// const cardItems = document.querySelectorAll('.filterable-cards li');
-
-// filterButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     document.querySelector('.filter-button .active')?.classList.remove('active');
-//     button.classList.add('active');
-
-//     const filterValue = button.dataset.filter;
-
-//     cardItems.forEach(item => {
-//       const card = item.querySelector('.card');
-//       if (!card) return;
-
-//       if (filterValue === 'Semua' || card.classList.contains(filterValue)) {
-//         item.classList.remove('hide');
-//       } else {
-//         item.classList.add('hide');
-//       }
-//     });
-//   });
-// });
-
 const filterButtons = document.querySelectorAll('.filter-button .section-filter');
 const cardItems = document.querySelectorAll('.filterable-cards li');
 
@@ -109,6 +85,38 @@ filterButtons.forEach(button => {
 
 
     // GALERI PUNYA
+   new Swiper('.card-wrapper2', {
+  loop: true,
+    spaceBetween: 30,
+
+  // Pagination bullets
+  pagination: {
+    el: '.swiper-pagination2',
+    clickable: true,
+    dynamicBullets: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+   // Responsive brakpoints
+  breakpoints:{
+    0: {
+        slidesPerView: 1
+    },
+     768: {
+        slidesPerView: 2
+    },
+    1024: {
+        slidesPerView: 3
+    },
+  }
+});
+
+
 new Swiper('.card-wrapper', {
   loop: true,
     spaceBetween: 30,
@@ -139,3 +147,33 @@ new Swiper('.card-wrapper', {
     },
   }
 });
+
+// Select elements
+const popup = document.getElementById('menuPopup');
+const popupImg = document.getElementById('popupImage');
+const popupTitle = document.getElementById('popupTitle');
+const popupDesc = document.getElementById('popupDesc');
+const closePopup = document.getElementById('closePopup');
+
+// Show popup when clicking image or title
+document.querySelectorAll('.menu-card').forEach(card => {
+  const img = card.querySelector('img');
+  const title = card.querySelector('.card-title');
+  const desc = card.querySelector('.card-text');
+
+  function showPopup() {
+    popupImg.src = img.src;
+    popupTitle.textContent = title.textContent;
+    popupDesc.textContent = desc.textContent;
+    popup.classList.remove('hidden');
+  }
+
+  img.addEventListener('click', showPopup);
+  title.addEventListener('click', showPopup);
+});
+
+// Close popup
+closePopup.addEventListener('click', () => {
+  popup.classList.add('hidden');
+});
+

@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+     <!-- ICON FORWARD -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <!-- LINK SWIPER -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
   <!-- PRIMARY META TAGS -->
   <title>The Tropical Ants</title>
   <meta name="title" content="The Tropical Ants">
@@ -109,29 +114,110 @@
       <!-- MENU -->
 
       <section class="section menu" aria-label="menu" id="menu">
+        
         <div class="container">
 
           <h2 class="headline-1 section-title text-center">Menu</h2>
 
+          <div class="container swiper">
+          <div class="card-wrapper2">
+          <ul class="card-list swiper-wrapper">
+
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage1.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li>
+
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage2.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li>
+
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage3.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li>
+
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage4.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li> 
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage5.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li> 
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage6.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li>
+
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage7.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li> 
+              <li class="swiper-slide">
+                <a href="#" class="card-link">
+                  <img src="Media/MenuPage8.jpg" alt="Card Image" 
+                  class="card-image2">
+                   <button class="material-symbols-rounded"></button>
+                </a>
+              </li>
+               </ul>
+               <div class="swiper-pagination"></div>
+              <div class="swiper-slide-button2 swiper-button-prev"></div>
+              <div class="swiper-slide-button2 swiper-button-next"></div>
+
+              
           <div class="container">
             <div class="filter-button">
-              <button class="section-filter active" data-filter="Semua">Semua</button>
-              <button class="section-filter" data-filter="Makanan">Makanan</button>
-              <button class="section-filter" data-filter="Spesial">Spesial</button>
-              <button class="section-filter" data-filter="Black-Coffee">Black Coffee</button>
-              <button class="section-filter" data-filter="White-Coffee">White Coffee</button>
-              <button class="section-filter" data-filter="Coffee-Flavour">Coffee Flavour</button>
-              <button class="section-filter" data-filter="Milk-Based">Milk Based</button>
-              <button class="section-filter" data-filter="Lainnya">Lainnya</button>
+              <center>
+                <button class="section-filter active" data-filter="Semua">Semua</button>
+                <button class="section-filter" data-filter="Makanan">Makanan</button>
+                <button class="section-filter" data-filter="Spesial">Spesial</button>
+                <button class="section-filter" data-filter="Black-Coffee">Black Coffee</button>
+                <button class="section-filter" data-filter="White-Coffee">White Coffee</button>
+                <button class="section-filter" data-filter="Coffee-Flavour">Coffee Flavour</button>
+                <button class="section-filter" data-filter="Milk-Based">Milk Based</button>
+                <button class="section-filter" data-filter="Lainnya">Lainnya</button>
+              </center>
             </div>
           </div>
 
           <p class="section-subtitle text-center label-2">Daftar</p>
 
           <ul class="grid-list filterable-cards">
+            <div id="menuPopup" class="popup-modal hidden">
+              <div class="popup-content">
+                <span class="close-btn" id="closePopup">&times;</span>
+                <img id="popupImage" src="" alt="Menu Image" class="popup-img">
+                <h3 id="popupTitle" class="popup-title"></h3>
+                <p id="popupDesc" class="popup-desc"></p>
+              </div>
+            </div>
 
             <li>
-              <div class="menu-card hover:card card Makanan" data-name="Makanan">
+              <div class="menu-card hover:card card Makanan" data-name="Makanan" >
 
                 <figure class="card-banner img-holder" style="--width: 69; --height: 69;">
                   <img src="/Media/iconMenu1.jpg" width="69" height="69" loading="lazy" alt="Bacon Egg Benedict" class="img-cover">
@@ -1337,29 +1423,51 @@
   </main>
 
 
-  <!-- FOOTER -->
-
-  <footer class="footer">
-    <div class="container">
-
-      <a href="tel:+628123456789" class="footer-item link">
-        <div class="icon">
-          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
-        </div>
-
-        <span class="span">+62 812 345 6789</span>
-      </a>
-
-      <a href="mailto:thetropicalants@gmial.com" class="footer-item link">
-        <div class="icon">
-          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-        </div>
-
-        <span class="span">tropicalants@gmail.com</span>
-      </a>
-
+     <!-- FOOTER -->
+  <footer class="section section-footer text-center">
+  <div class="container">
+      <div class="grid-list">
+        <ul class="footer-list">
+          <li>
+            <a href="index.html" class="label-2 footer-link">Home</a>
+          </li>
+          <li>
+            <a href="menu.html" class="label-2 footer-link">Menu</a>
+          </li>
+          <li>
+            <a href="kontak-lokasi.html" class="label-2 footer-link">Kontak</a>
+          </li>
+          <li>
+            <a href="#" class="label-2 footer-link">Facebook</a>
+          </li>
+        </ul>
+        <ul class="footer-list list-2">
+          <li>
+            <a href="https://www.instagram.com/tropicalants/" class="label-2 footer-link">Instagram</a>
+          </li>
+          <li>
+            <a href="#" class="label-2 footer-link">Twitter</a>
+          </li>
+          <li>
+            <a href="#" class="label-2 footer-link">Youtube</a>
+          </li>
+          <li>
+            <a href="kontak-lokasi.html" class="label-2 footer-link">GoogleMap</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2025 The Tropical Ants. All Rights Reserved | Dibuat oleh
+          <a href="https://github.com/Siindu/Project-Website-Cafe-Shop" target="blank" class="link">kelompokPaguyubanPasek</a>
+        </p>
+      </div>
     </div>
   </footer>
+
+
+  <!-- SWIPER JAVASCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
   <!-- JAVASCRIPT -->
