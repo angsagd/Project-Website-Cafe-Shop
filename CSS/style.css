@@ -993,6 +993,58 @@ textarea.input-field {
   border-radius: 10px;
 }
 
+body.popup-open {
+  overflow: hidden;
+}
+
+#popupOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 50px;
+  z-index: 9999;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+#popup.active,
+#popupOverlay.active {
+  display: block;
+}
+
+#popup p {
+  color: black;
+}
+    
+#closePopup {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--gold-crayola);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#closePopup:hover {
+  background-color: var(--davys-grey);
+}
+
 
 
 /* FOOTER */

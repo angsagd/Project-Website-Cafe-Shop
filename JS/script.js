@@ -172,3 +172,27 @@ breakpoints:{
   closePopup.addEventListener('click', () => {
     popup.classList.add('hidden');
   });
+
+//popup pesan meja
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("popup");
+  const overlay = document.getElementById("popupOverlay");
+  const pesanBtn = document.getElementById("pesanBtn");
+  const closeBtn = document.getElementById("closePopup");
+
+  if (pesanBtn && popup && overlay && closeBtn) {
+    pesanBtn.addEventListener("click", function (e) {
+      e.preventDefault(); // Mencegah refresh
+      popup.classList.add("active");
+      overlay.classList.add("active");
+      document.body.classList.add("popup-open");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      popup.classList.remove("active");
+      overlay.classList.remove("active");
+      document.body.classList.remove("popup-open");
+    });
+  }
+});

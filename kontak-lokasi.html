@@ -23,6 +23,13 @@
   
   <!-- CSS -->
   <link rel="stylesheet" href="/CSS/style.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 <body>
 
@@ -193,9 +200,9 @@
             </div>
 
             <textarea name="message" placeholder="Pesan" autocomplete="off" class="input-field"></textarea>
-            <button type="submit" class="btn btn-secondary">
-            <span class="text text-1">Pesan Meja</span>
-            <span class="text text-2" aria-hidden="true">Pesan Meja</span>
+            <button type="button" class="btn btn-secondary" id="pesanBtn">
+              <span class="text text-1">Pesan Meja</span>
+              <span class="text text-2" aria-hidden="true">Pesan Meja</span>
             </button>
           </form>
 
@@ -270,6 +277,12 @@
     </div>
   </footer>
 
+  <div id="popupOverlay"></div>
+    <div id="popup">
+    <p>Terima kasih!</p>
+    <p>Meja berhasil di pesan</p>
+    <button id="closePopup">Tutup</button>
+  </div>
 
   <!-- JAVASCRIPT -->
 
