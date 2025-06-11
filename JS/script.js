@@ -112,38 +112,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
   autoSlide();
 
+
+// ANIMASI BUTTON
+const buttons = document.querySelectorAll(".btn-slide");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      btn.classList.remove("hover-out");
+      btn.classList.add("hover-in");
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      btn.classList.remove("hover-in");
+      btn.classList.add("hover-out");
+    });
+  });
+
 });
 
 
 // MENU & GALERI SLIDER
 new Swiper('.card-wrapper', {
-loop: true,
-  spaceBetween: 30,
+  loop: true,
+    spaceBetween: 30,
 
-pagination: {
-  el: '.swiper-pagination',
-  clickable: true,
-  dynamicBullets: true
-},
-
-navigation: {
-  nextEl: '.swiper-button-next',
-  prevEl: '.swiper-button-prev',
-},
-
-// Responsive brakpoints
-breakpoints:{
-  0: {
-      slidesPerView: 1
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
   },
-  768: {
-      slidesPerView: 2
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
-  1024: {
-      slidesPerView: 3
-      },
+
+  // Responsive brakpoints
+  breakpoints:{
+    0: {
+        slidesPerView: 1
+    },
+    768: {
+        slidesPerView: 2
     }
-  });
+  }
+});
+
+new Swiper('.galeri', {
+  breakpoints:{
+    922: {
+      slidesPerView: 3
+    }
+  }
+})
 
 
 // POP-UP
