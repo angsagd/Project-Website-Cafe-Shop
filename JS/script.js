@@ -113,18 +113,38 @@ document.addEventListener("DOMContentLoaded", function () {
   autoSlide();
 
 
-// ANIMASI BUTTON
-const buttons = document.querySelectorAll(".btn-slide");
+  // ANIMASI BUTTON
+
+  const buttons = document.querySelectorAll(".btn-slide");
 
   buttons.forEach((btn) => {
+    let hoverInTimeout;
+    let slideCompleted = false;
+
     btn.addEventListener("mouseenter", () => {
-      btn.classList.remove("hover-out");
+      clearTimeout(hoverInTimeout);
+      slideCompleted = false;
+
+      btn.classList.remove("hover-out-left", "hover-out-right");
       btn.classList.add("hover-in");
+
+      hoverInTimeout = setTimeout(() => {
+        slideCompleted = true;
+      }, 400); // match transition time
     });
 
     btn.addEventListener("mouseleave", () => {
       btn.classList.remove("hover-in");
-      btn.classList.add("hover-out");
+
+      if (slideCompleted) {
+        btn.classList.add("hover-out-right");
+      } else {
+        btn.classList.add("hover-out-left");
+      }
+
+      setTimeout(() => {
+        btn.classList.remove("hover-out-left", "hover-out-right");
+      }, 400); // cleanup after transition
     });
   });
 
@@ -158,13 +178,21 @@ new Swiper('.card-wrapper', {
   }
 });
 
-new Swiper('.galeri', {
+new Swiper('.galeri .card-wrapper', {
+  loop: true,
+    spaceBetween: 30,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
   breakpoints:{
     922: {
       slidesPerView: 3
     }
   }
-})
+});
 
 
 // POP-UP
@@ -173,11 +201,13 @@ new Swiper('.galeri', {
   const popupTitle = document.getElementById('popupTitle');
   const popupDesc = document.getElementById('popupDesc');
   const closePopup = document.getElementById('closePopup');
+  const popupReser = document.getElementById('btn');
 
-  document.querySelectorAll('.menu-card').forEach(card => {
+  document.querySelectorAll('.menu-card', '.form-left').forEach(card => {
     const img = card.querySelector('img');
     const title = card.querySelector('.card-title');
     const desc = card.querySelector('.card-text');
+    const button = card.querySelectorAll('button');
 
     function showPopup() {
       popupImg.src = img.src;
@@ -186,34 +216,17 @@ new Swiper('.galeri', {
       popup.classList.remove('hidden');
     }
 
+    function reserPopup() {
+      popupTitle.textContent = title.textContent;
+      popupDesc.textContent = desc.textContent;
+      popup.classList.remove('hidden');
+    }
+
     img.addEventListener('click', showPopup);
     title.addEventListener('click', showPopup);
+    button.addEventListener('click', reserPopup);
   });
 
   closePopup.addEventListener('click', () => {
     popup.classList.add('hidden');
   });
-
-//popup pesan meja
-
-document.addEventListener("DOMContentLoaded", function () {
-  const popup = document.getElementById("popup");
-  const overlay = document.getElementById("popupOverlay");
-  const pesanBtn = document.getElementById("pesanBtn");
-  const closeBtn = document.getElementById("closePopup");
-
-  if (pesanBtn && popup && overlay && closeBtn) {
-    pesanBtn.addEventListener("click", function (e) {
-      e.preventDefault(); // Mencegah refresh
-      popup.classList.add("active");
-      overlay.classList.add("active");
-      document.body.classList.add("popup-open");
-    });
-
-    closeBtn.addEventListener("click", function () {
-      popup.classList.remove("active");
-      overlay.classList.remove("active");
-      document.body.classList.remove("popup-open");
-    });
-  }
-});

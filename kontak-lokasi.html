@@ -38,7 +38,7 @@
   <header class="header" data-header>
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="/Media/Favicon.png" width="69" height="69" alt="The Tropical Ants logo">
+        <img src="/Media/Logo.png" width="220" alt="The Tropical Ants logo">
       </a>
 
       <nav class="navbar" data-navbar>
@@ -129,6 +129,11 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8569403823594!2d115.250354!3d-8.513268000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d10f089943d%3A0xc3e1ca2d3c5318fc!2sThe%20Tropical%20Ants!5e0!3m2!1sid!2sid!4v1749020691648!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
         </div>
 
+        <img src="Media/shape-1.png" width="246" height="412" loading="lazy" alt="shape"
+        class="shape shape-1">
+        <img src="Media/shape-2.png" width="343" height="345" loading="lazy" alt="shape"
+        class="shape shape-6">
+
       </div>
       </section>
 
@@ -198,9 +203,32 @@
 
             <textarea name="message" placeholder="Pesan" autocomplete="off" class="input-field"></textarea>
 
-            <button type="submit" class="btn btn-slide" id="btnHover">
-              <span class="text text-1">Pesan Meja</span>
-            </button>
+
+            <div class="popup-reservation">
+              <div id="menuPopup" class="popup-modal hidden">
+
+                <div class="popup-content">
+                  <button class="close-btn" id="closePopup" aria-label="close-menu">
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                  </button>
+                  <h3 id="popupTitle" class="popup-title"></h3>
+                  <p id="popupDesc" class="popup-desc"></p>
+                </div>
+
+              </div>
+              
+              <button type="submit" class="btn btn-slide" id="btn">
+                <span class="text text-1">Pesan Meja</span>
+              </button>
+
+              <div class="popup-rsv">
+                <h3 class="title-2">
+                  <a class="card-title">Terimakasih</a>
+                </h3>
+
+                <p class="card-text label-1">Meja berhasil dipesan!</p>
+              </div>
+            </div>
 
           </form>
 
@@ -228,6 +256,7 @@
             </p>
           </div>
         </div>
+
       </div>
     </section>
   </main>
