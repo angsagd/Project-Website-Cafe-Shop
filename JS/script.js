@@ -167,51 +167,82 @@ new Swiper('.galeri', {
 })
 
 
-// POP-UP
-  const popup = document.getElementById('menuPopup');
-  const popupImg = document.getElementById('popupImage');
-  const popupTitle = document.getElementById('popupTitle');
-  const popupDesc = document.getElementById('popupDesc');
-  const closePopup = document.getElementById('closePopup');
-
-  document.querySelectorAll('.menu-card').forEach(card => {
-    const img = card.querySelector('img');
-    const title = card.querySelector('.card-title');
-    const desc = card.querySelector('.card-text');
-
-    function showPopup() {
-      popupImg.src = img.src;
-      popupTitle.textContent = title.textContent;
-      popupDesc.textContent = desc.textContent;
-      popup.classList.remove('hidden');
-    }
-
-    img.addEventListener('click', showPopup);
-    title.addEventListener('click', showPopup);
-  });
-
-  closePopup.addEventListener('click', () => {
-    popup.classList.add('hidden');
-  });
-
-//popup pesan meja
-
 document.addEventListener("DOMContentLoaded", function () {
-  const popup = document.getElementById("popup");
-  const overlay = document.getElementById("popupOverlay");
-  const pesanBtn = document.getElementById("pesanBtn");
-  const closeBtn = document.getElementById("closePopup");
+  // POPUP MENU
+  const menuPopup = document.getElementById("menuPopup");
+  const popupImg = document.getElementById("popupImage");
+  const popupTitle = document.getElementById("popupTitle");
+  const popupDesc = document.getElementById("popupDesc");
+  const closeMenuPopup = document.getElementById("closeMenuPopup");
 
-  if (pesanBtn && popup && overlay && closeBtn) {
-    pesanBtn.addEventListener("click", function (e) {
-      e.preventDefault(); // Mencegah refresh
-      popup.classList.add("active");
-      overlay.classList.add("active");
-      document.body.classList.add("popup-open");
+  if (menuPopup && popupImg && popupTitle && popupDesc && closeMenuPopup) {
+    document.querySelectorAll(".menu-card").forEach((card) => {
+      const img = card.querySelector("img");
+      const title = card.querySelector(".card-title");
+      const desc = card.querySelector(".card-text");
+
+      function showMenuPopup() {
+        popupImg.src = img.src;
+        popupTitle.textContent = title.textContent;
+        popupDesc.textContent = desc.textContent;
+        menuPopup.classList.remove("hidden");
+      }
+
+      img.addEventListener("click", showMenuPopup);
+      title.addEventListener("click", showMenuPopup);
     });
 
-    closeBtn.addEventListener("click", function () {
-      popup.classList.remove("active");
+    closeMenuPopup.addEventListener("click", function () {
+      menuPopup.classList.add("hidden");
+    });
+  }
+
+  // POPUP PESAN MEJA
+  const mejaPopup = document.getElementById("popup");
+  const overlay = document.getElementById("popupOverlay");
+  const pesanBtn = document.getElementById("pesanBtn");
+  const closeMejaPopup = document.getElementById("closePopup");
+  const phoneInput = document.getElementById("phone");
+
+  phoneInput.addEventListener("input", function () {
+  this.value = this.value.replace(/\D/g, "");
+  });
+
+  if (pesanBtn && mejaPopup && overlay && closeMejaPopup) {
+    pesanBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const person = document.getElementById("person").value;
+      const date = document.getElementById("reservation-date").value;
+      const time = document.getElementById("time").value;
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !phone || !person || !date || !time || !message) {
+        alert("Mohon lengkapi semua kolom sebelum memesan meja.");
+        return;
+      }
+
+      if (!/^\d+$/.test(phone)) {
+      alert("Nomor telepon hanya boleh berisi angka.");
+      return;
+      }
+
+      mejaPopup.classList.add("active");
+      overlay.classList.add("active");
+      document.body.classList.add("popup-open");
+
+      document.getElementById("name").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("person");
+      document.getElementById("reservation-date").value = "";
+      document.getElementById("time");
+      document.getElementById("message").value = "";
+    });
+
+    closeMejaPopup.addEventListener("click", function () {
+      mejaPopup.classList.remove("active");
       overlay.classList.remove("active");
       document.body.classList.remove("popup-open");
     });

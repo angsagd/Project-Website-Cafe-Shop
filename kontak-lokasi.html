@@ -147,14 +147,14 @@
             </p>
 
             <div class="input-wrapper">
-                <input type="text" name="name" placeholder="Nama Anda" autocomplete="off" class="input-field">
-                <input type="tel" name="phone" placeholder="Nomor Telepon" autocomplete="off" class="input-field">
+                <input type="text" name="name" placeholder="Nama Anda" autocomplete="off" class="input-field" id="name">
+                <input type="tel" name="phone" placeholder="Nomor Telepon" autocomplete="off" class="input-field" id="phone">
             </div>
 
             <div class="input-wrapper">
               <div class="icon-wrapper">
                 <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-                <select name="person" class="input-field">
+                <select name="person" class="input-field" id="person">
                   <option value="1-person">1 Orang</option>
                   <option value="2-person">2 Orang</option>
                   <option value="3-person">3 Orang</option>
@@ -168,13 +168,14 @@
 
               <div class="icon-wrapper">
                 <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
-                <input type="date" name="reservation-date" class="input-field">
+                <input type="date" name="reservation-date" class="input-field"
+                id="reservation-date">
                 <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
               </div>
 
               <div class="icon-wrapper">
                 <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
-                <select name="person" class="input-field">
+                <select name="person" class="input-field" id="time">
                   <option value="08:00 am">08:00 am</option>
                   <option value="09:00 am">09:00 am</option>
                   <option value="10:00 am">10:00 am</option>
@@ -196,9 +197,9 @@
               </div>
             </div>
 
-            <textarea name="message" placeholder="Pesan" autocomplete="off" class="input-field"></textarea>
+            <textarea name="message" placeholder="Pesan" autocomplete="off" class="input-field" id="message"></textarea>
 
-            <button type="submit" class="btn btn-slide" id="btnHover">
+            <button type="submit" class="btn btn-slide" id="pesanBtn">
               <span class="text text-1">Pesan Meja</span>
             </button>
 
