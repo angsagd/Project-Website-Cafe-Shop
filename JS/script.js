@@ -113,18 +113,38 @@ document.addEventListener("DOMContentLoaded", function () {
   autoSlide();
 
 
-// ANIMASI BUTTON
-const buttons = document.querySelectorAll(".btn-slide");
+  // ANIMASI BUTTON
+
+  const buttons = document.querySelectorAll(".btn-slide");
 
   buttons.forEach((btn) => {
+    let hoverInTimeout;
+    let slideCompleted = false;
+
     btn.addEventListener("mouseenter", () => {
-      btn.classList.remove("hover-out");
+      clearTimeout(hoverInTimeout);
+      slideCompleted = false;
+
+      btn.classList.remove("hover-out-left", "hover-out-right");
       btn.classList.add("hover-in");
+
+      hoverInTimeout = setTimeout(() => {
+        slideCompleted = true;
+      }, 400); // match transition time
     });
 
     btn.addEventListener("mouseleave", () => {
       btn.classList.remove("hover-in");
-      btn.classList.add("hover-out");
+
+      if (slideCompleted) {
+        btn.classList.add("hover-out-right");
+      } else {
+        btn.classList.add("hover-out-left");
+      }
+
+      setTimeout(() => {
+        btn.classList.remove("hover-out-left", "hover-out-right");
+      }, 400); // cleanup after transition
     });
   });
 
@@ -158,13 +178,21 @@ new Swiper('.card-wrapper', {
   }
 });
 
-new Swiper('.galeri', {
+new Swiper('.galeri .card-wrapper', {
+  loop: true,
+    spaceBetween: 30,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
   breakpoints:{
     922: {
       slidesPerView: 3
     }
   }
-})
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
