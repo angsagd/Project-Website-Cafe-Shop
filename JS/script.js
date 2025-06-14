@@ -151,8 +151,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// MENU & GALERI SLIDER
-new Swiper('.card-wrapper', {
+// SLIDE MENU & GALERI
+new Swiper('.menu .card-wrapper', {
   loop: true,
     spaceBetween: 30,
 
@@ -169,10 +169,7 @@ new Swiper('.card-wrapper', {
 
   // Responsive brakpoints
   breakpoints:{
-    0: {
-        slidesPerView: 1
-    },
-    768: {
+    640: {
         slidesPerView: 2
     }
   }
@@ -182,12 +179,21 @@ new Swiper('.galeri .card-wrapper', {
   loop: true,
     spaceBetween: 30,
 
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
+
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 
   breakpoints:{
+    640: {
+        slidesPerView: 2
+    },
     922: {
       slidesPerView: 3
     }
