@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
         popupTitle.textContent = title.textContent;
         popupDesc.textContent = desc.textContent;
         menuPopup.classList.remove("hidden");
+        document.body.classList.add("popup-open-menu");
       }
 
       img.addEventListener("click", showMenuPopup);
@@ -228,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeMenuPopup.addEventListener("click", function () {
       menuPopup.classList.add("hidden");
+      document.body.classList.remove("popup-open-menu");
     });
   }
 
@@ -235,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mejaPopup = document.getElementById("popup");
   const overlay = document.getElementById("popupOverlay");
   const pesanBtn = document.getElementById("pesanBtn");
-  const closeMejaPopup = document.getElementById("closePopup");
+  const closeMejaPopup = document.getElementById("closePopupMeja");
   const phoneInput = document.getElementById("phone");
 
   phoneInput.addEventListener("input", function () {
