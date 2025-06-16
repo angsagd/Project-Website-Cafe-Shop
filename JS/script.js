@@ -114,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ANIMASI BUTTON
-
   const buttons = document.querySelectorAll(".btn-slide");
 
   buttons.forEach((btn) => {
@@ -130,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       hoverInTimeout = setTimeout(() => {
         slideCompleted = true;
-      }, 400); // match transition time
+      }, 400);
     });
 
     btn.addEventListener("mouseleave", () => {
@@ -144,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       setTimeout(() => {
         btn.classList.remove("hover-out-left", "hover-out-right");
-      }, 400); // cleanup after transition
+      }, 400);
     });
   });
 
@@ -200,9 +199,10 @@ new Swiper('.galeri .card-wrapper', {
   }
 });
 
-
+// POP-UP
 document.addEventListener("DOMContentLoaded", function () {
-  // POPUP MENU
+
+  // MENU
   const menuPopup = document.getElementById("menuPopup");
   const popupImg = document.getElementById("popupImage");
   const popupTitle = document.getElementById("popupTitle");
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // POPUP PESAN MEJA
+  // RESERVASI
   const mejaPopup = document.getElementById("popup");
   const overlay = document.getElementById("popupOverlay");
   const pesanBtn = document.getElementById("pesanBtn");

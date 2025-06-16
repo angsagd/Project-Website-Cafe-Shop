@@ -10,7 +10,6 @@
   <meta name="description" content="Cafe Shop di Bali">
 
   <!-- FAVICON -->
-
   <link rel="shortcut icon" href="/Media/Favicon.png" type="image/svg+xml">
 
   <!-- FEATHER ICONS -->
@@ -118,6 +117,7 @@
 
   <main class="main" id="top">
 
+
     <!-- LOKASI & RESERVASI -->
 
     <section class="section lokasi text-center">
@@ -208,6 +208,13 @@
               <span class="text text-1">Pesan Meja</span>
             </button>
             
+            <div id="popupOverlay"></div>
+              <div id="popup">
+              <p>Terima kasih!</p>
+              <p>Meja berhasil di pesan</p>
+              <button id="closePopupMeja">Tutup</button>
+            </div>
+
           </form>
 
           <div class="form-right text-center" style="background-image: url('./Media/form-pattern.png')">
@@ -221,16 +228,16 @@
               The Tropical Ants,<br>Jl. Katik Lantang Jl. Campuhan III, Singakerta,<br>Kecamatan Ubud, Kabupaten Gianyar, Bali
             </address>
 
-            <p class="contact-label">Waktu Makan Siang</p>
+            <p class="contact-label">Hari Biasa</p>
             <p class="body-3">
-              Senin - Minggu <br>
-              11.00 am - 2.30 pm
+              Senin - Jumat <br>
+              11.00 am - 10.30 pm
             </p>
 
-            <p class="contact-label">Waktu Makan Malam</p>
+            <p class="contact-label">Akhir Pekan</p>
             <p class="body-3">
-              Senin - Minggu <br>
-              05.00 pm - 11.00 pm
+              Sabtu & Minggu <br>
+              9.00 am - 11.59 pm
             </p>
           </div>
         </div>
@@ -293,21 +300,14 @@
     </div>
   </footer>
 
-  <div id="popupOverlay"></div>
-    <div id="popup">
-    <p>Terima kasih!</p>
-    <p>Meja berhasil di pesan</p>
-    <button id="closePopupMeja">Tutup</button>
-  </div>
 
   <!-- JAVASCRIPT -->
-
   <script src="/JS/script.js"></script>
 
   <!-- ION ICON LINK -->
-
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  
 </body>
 </html>

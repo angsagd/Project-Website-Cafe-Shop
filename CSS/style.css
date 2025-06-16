@@ -1,3 +1,6 @@
+
+/* CUSTOM PROPERTY */
+
 :root {
 
   --gold-crayola: hsl(38, 42%, 59%);
@@ -127,8 +130,6 @@ body{
   font-size: var(--fontSize-body-3);
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
-  /* overflow: hidden; */
-  /* height: 300vh; */
 }
 
 body.loaded {
@@ -151,7 +152,6 @@ body.nav-active {
 ::-webkit-scrollbar-thumb{
   background-color: var(--gold-crayola);
 }
-
 
 
 /* TYPOGRAPHY */
@@ -183,7 +183,6 @@ body.nav-active {
 .label-1 { font-size: var(--fontSize-label-1); }
 
 .label-2 { font-size: var(--fontSize-label-2); }
-
 
 
 /*  REUSED STYLE */
@@ -419,7 +418,6 @@ left: 15px; }
 .shape-6 { bottom: 0; }
 
 
-
 /* HEADER */
 
 .header .btn { display: none; }
@@ -608,7 +606,6 @@ left: 15px; }
   text-align: left;
 }
 
-
 .hero .slider-item {
   position: absolute;
   top: 50%;
@@ -679,7 +676,6 @@ left: 15px; }
 }
 
 
-
 /* MENU */
 
 .menu .swiper .card-image {
@@ -702,6 +698,8 @@ left: 15px; }
 .filterable-cards li.hide {
   display: none;
 }
+
+.menu .grid-link:is(:hover, :focus-visible) { color: var(--white); }
 
 .menu .container { margin-top: -10px; }
 
@@ -834,7 +832,6 @@ body.popup-open-menu {
 }
 
 
-
 /* PROMO & EVENT */
 
 #promo h2 { margin-top: 55px; }
@@ -924,10 +921,49 @@ body.popup-open-menu {
 }
 
 
-
 /* LOKASI & RESERVASI */
 
 .lokasi .container { margin-top: -10px; }
+
+.map {
+  margin-top: 90px;
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+  height: 40rem;
+  z-index: -1;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230vh;
+}
+
+.map {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: 0;
+}
+
+.form-overlay {
+  position: absolute;
+  top: 1200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 30px 20px;
+  background-color: var(--black);
+  color: var(--white);
+  max-width: 100%;
+  width: 90%;
+  border-radius: 10px;
+}
 
 .form-text { margin-block-end: 40px; }
 
@@ -982,46 +1018,6 @@ textarea.input-field {
   background-position: top left;
 }
 
-.map {
-  margin-top: 90px;
-  flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
-  height: 40rem;
-  z-index: -1;
-}
-
-.map-wrapper {
-  position: relative;
-  width: 100%;
-  height: 230vh;
-}
-
-.map {
-  width: 100%;
-  height: 40rem;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border: 0;
-}
-
-.form-overlay {
-  position: absolute;
-  top: 1200px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  padding: 30px 20px;
-  background-color: var(--black);
-  color: var(--white);
-  max-width: 100%;
-  width: 90%;
-  border-radius: 10px;
-}
-
 body.popup-open {
   overflow: hidden;
 }
@@ -1072,8 +1068,6 @@ body.popup-open {
 }
 
 
-
-
 /* FOOTER */
 
 .section-footer { top: 0; }
@@ -1093,7 +1087,6 @@ body.popup-open {
   color: var(--gold-crayola);
   text-decoration: underline;
 }
-.grid-link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
 
 .copyright {
   margin-top: 50px;
@@ -1106,7 +1099,6 @@ body.popup-open {
   color: var(--gold-crayola);
   text-decoration: underline;
 }
-
 
 
 /* RESPONSIABLE */
@@ -1360,13 +1352,16 @@ body.popup-open {
   }
 
   /* Reservasi */
-  .map-wrapper { height: 180vh; }
+  .map { height: 100vh; }
+
+  .map-wrapper { height: 185vh; }
 
   .reservation-form {
-    top: 125rem;
+    top: 130rem;
     display: grid;
     grid-template-columns: 1fr 0.5fr;
   }
+
 }
 
 @media (min-width: 1200px) {
@@ -1459,13 +1454,13 @@ body.popup-open {
   }
 
   /* Reservasi */
-  .map-wrapper { height: 170vh; }
+  .map-wrapper { height: 190vh; }
 
   .reservation-form {
-    top: 120rem;
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
+    top: 130rem;
+    max-width: 140vh;
   }
+  
 }
 
 @media (min-width: 1400px) {
